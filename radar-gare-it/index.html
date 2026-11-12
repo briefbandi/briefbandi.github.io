@@ -42,6 +42,7 @@
     .skip:focus{left:1rem;top:1rem}
     .wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
 
+    .banner .short{display:none}
     .banner{background:var(--accent);color:#F2F7F4;text-align:center;font-size:.85rem;padding:.5rem 1rem;letter-spacing:.01em}
 
     header.site{border-bottom:1px solid var(--line);background:rgba(247,246,242,.92);backdrop-filter:saturate(1.2) blur(6px);position:sticky;top:0;z-index:5}
@@ -139,6 +140,7 @@
     }
     @media (max-width:420px){
       .banner .long{display:none}
+      .banner .short{display:inline}
       .banner{font-size:.8rem}
       .wrap{padding:0 1rem}
       header.site{position:static}
@@ -153,7 +155,7 @@
 </head>
 <body>
   <a class="skip" href="#contenuto">Vai al contenuto</a>
-  <div class="banner" role="note">Anteprima pilota<span class="long"> · copertura in validazione</span> · nessun<span class="long"> acquisto o</span> iscrizione attiva</div>
+  <div class="banner" role="note">Anteprima pilota<span class="long"> · copertura in validazione · nessun acquisto o iscrizione attiva</span><span class="short"> · nessuna iscrizione attiva</span></div>
 
   <header class="site">
     <div class="wrap">
