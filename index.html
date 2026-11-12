@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Brief Bandi — anteprima demo (file unico)</title>
+  <meta name="description" content="Anteprima demo di Brief Bandi. Dati fittizi, iscrizioni disattivate. Non è un portale della pubblica amministrazione.">
+  <link rel="icon" href="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%231D4E3C%22/%3E%3Cpath%20d%3D%22M126%2092h196l90%2086v242c0%2018-14%2032-32%2032H126c-18%200-32-14-32-32V124c0-18%2014-32%2032-32z%22%20fill%3D%22%231D4E3C%22%20stroke%3D%22%23FAF7F2%22%20stroke-width%3D%2218%22/%3E%3Cpath%20d%3D%22M322%2092v70c0%2014%2012%2026%2026%2026h74%22%20fill%3D%22none%22%20stroke%3D%22%23FAF7F2%22%20stroke-width%3D%2218%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M322%2092l100%2096H348c-14%200-26-12-26-26V92z%22%20fill%3D%22%230F766E%22%20stroke%3D%22%23FAF7F2%22%20stroke-width%3D%2218%22%20stroke-linejoin%3D%22round%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22230%22%20width%3D%22200%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22%23FAF7F2%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22278%22%20width%3D%22150%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22%23A7F3D0%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22326%22%20width%3D%22176%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22%235F8F7A%22/%3E%3C/svg%3E">
+  <style>
+:root {
+  --ink: #1C1917;
+  --muted: #57534E;
+  --paper: #FAF7F2;
+  --card: #ffffff;
+  --line: #E7E0D6;
+  --accent: #1D4E3C;
+  --accent-2: #0F766E;
+  --warn: #9A3412;
+  --ok: #166534;
+  --banner: #1D4E3C;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+}
+.demo-banner {
+  background: var(--banner);
+  color: #FAF7F2;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+.wrap { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+header.site {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  border-bottom: 1px solid var(--line); padding-bottom: 0.75rem; margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.brand { display: inline-flex; align-items: center; text-decoration: none; color: var(--ink); }
+.brand svg { display: block; height: 56px; width: auto; }
+nav { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+nav a { color: var(--muted); margin-left: 0.85rem; font-size: 0.95rem; text-decoration: none; }
+nav a:hover, nav a[aria-current="page"] { color: var(--accent); }
+h1 { font-size: 2.05rem; line-height: 1.2; margin: 0 0 0.75rem; }
+h2 { font-size: 1.35rem; margin: 2rem 0 0.6rem; }
+h3 { font-size: 1.1rem; margin: 1.2rem 0 0.4rem; }
+p.lead { font-size: 1.15rem; color: var(--muted); margin-top: 0; }
+.hypo {
+  display: inline-block; background: #ecfdf5; color: #14532d;
+  border: 1px solid #a7f3d0; border-radius: 999px; padding: 0.15rem 0.7rem;
+  font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.price { font-size: 1.7rem; margin: 0.3rem 0; }
+.price small { font-size: 0.95rem; color: var(--muted); font-weight: 400; }
+.note, .disclaimer { color: var(--muted); font-size: 0.95rem; }
+ul.check, ul.plain { padding-left: 1.1rem; }
+ul.check li, ul.plain li { margin: 0.35rem 0; }
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1.25rem 1.3rem; margin: 1.5rem 0;
+}
+label { display: block; font-size: 0.92rem; margin: 0.7rem 0 0.25rem; }
+input, select, textarea {
+  width: 100%; padding: 0.55rem 0.65rem; border: 1px solid #d6cfc4;
+  border-radius: 8px; font: inherit; background: #f5f2ec; color: var(--muted);
+}
+fieldset { border: 0; margin: 0; padding: 0; min-inline-size: 0; }
+fieldset[disabled] { opacity: 0.72; }
+button, .btn {
+  background: var(--accent); color: #fff; border: 0; border-radius: 8px;
+  padding: 0.7rem 1.1rem; font: inherit; cursor: pointer; display: inline-block;
+  text-decoration: none; margin-top: 0.8rem;
+}
+button:disabled {
+  background: #8A9A93; cursor: not-allowed;
+}
+.avviso {
+  background: #FEF3C7; color: #92400E; border: 1px solid #F59E0B;
+  border-radius: 8px; padding: 0.7rem 0.9rem; margin: 0 0 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+.compare { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.compare th, .compare td { text-align: left; padding: 0.45rem 0.4rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.meta { font-size: 0.92rem; color: var(--muted); }
+.tag {
+  display: inline-block; font-family: system-ui, sans-serif; font-size: 0.75rem;
+  letter-spacing: 0.04em; text-transform: uppercase; border-radius: 999px;
+  padding: 0.1rem 0.55rem; margin-right: 0.35rem;
+}
+.tag.aperto { background: #ecfdf5; color: #14532d; }
+.tag.cond { background: #FFFBEB; color: #92400E; }
+.tag.no { background: #FEF2F2; color: #991B1B; }
+.tag.arrivo { background: #EFF6FF; color: #1E40AF; }
+a { color: var(--accent-2); }
+.page-block { margin-bottom: 3rem; }
+</style>
+  
+</head>
+<body>
+  <div class="demo-banner" role="status">Anteprima demo – dati fittizi</div>
+  <div class="wrap">
+    <header class="site">
+      <a class="brand" href="#home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-label="Brief Bandi" width="210" height="60">
+  <title>Brief Bandi</title>
+  <g transform="translate(0,0) scale(0.3125)">
+    <rect width="512" height="512" rx="96" fill="#FAF7F2"/>
+    <path d="M126 92h196l90 86v242c0 18-14 32-32 32H126c-18 0-32-14-32-32V124c0-18 14-32 32-32z" fill="#FFFFFF" stroke="#1D4E3C" stroke-width="18"/>
+    <path d="M322 92v70c0 14 12 26 26 26h74" fill="none" stroke="#1D4E3C" stroke-width="18" stroke-linejoin="round"/>
+    <path d="M322 92l100 96H348c-14 0-26-12-26-26V92z" fill="#E7E0D6" stroke="#1D4E3C" stroke-width="18" stroke-linejoin="round"/>
+    <rect x="156" y="230" width="200" height="18" rx="9" fill="#1D4E3C"/>
+    <rect x="156" y="278" width="150" height="18" rx="9" fill="#0F766E"/>
+    <rect x="156" y="326" width="176" height="18" rx="9" fill="#C4BDB3"/>
+  </g>
+  <text x="176" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700" fill="#1C1917">Brief</text>
+  <text x="348" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700" fill="#1D4E3C">Bandi</text>
+</svg></a>
+      <nav>
+        <a href="#home" aria-current="page">Offerta</a>
+        <a href="#iscrizione">Iscrizione</a>
+        <a href="#brief">Esempio di brief</a>
+        <a href="#contatti">Contatti</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </header>
+    
+    <section class="page-block" id="home">
+    
+    <p class="hypo">Anteprima demo · ipotesi di prezzo da validare · non un listino deciso</p>
+    <h1>Il brief settimanale sui bandi che riguardano la tua impresa, riletto sulla pagina ufficiale.</h1>
+    <p class="lead">Non un catalogo in cui entrare a cercare. Un testo pronto, scritto sul tuo profilo (ATECO, territorio, dimensione, obiettivo), con stato, scadenza e link all'atto dell'ente. Il giovedì, via email.</p>
+    <p class="price">39 € <small>al mese, IVA inclusa — ipotesi</small></p>
+    <p class="note">Se dopo il numero di prova 39 € non torna, confrontiamo 29 €. In questa anteprima non c'è alcun addebito e le iscrizioni non sono aperte: si mostra solo come apparirebbe il servizio.</p>
+
+    <p><a class="btn" href="#brief">Vedi un esempio di brief fittizio</a></p>
+
+    <section id="offerta">
+      <h2>Cosa ricevi</h2>
+      <ul class="check">
+        <li>Un brief a settimana (giorno previsto: giovedì), 3–7 misure pertinenti o esplicitamente non pertinenti.</li>
+        <li>Per ciascuna: stato, scadenza o finestra, link ufficiale, data dell'ultimo controllo.</li>
+        <li>Un richiamo a 14 giorni dalla chiusura, quando la scadenza è ancora aperta sulla fonte ufficiale.</li>
+        <li>Un riepilogo mensile e una mail di chiarimento al mese, se serve.</li>
+      </ul>
+      <h2>Cosa non è</h2>
+      <ul class="check">
+        <li>Non presenta la domanda al posto tuo e non garantisce l'esito.</li>
+        <li>Non è un database self-service né un parere legale, fiscale o di finanza agevolata.</li>
+        <li>Non è un sito istituzionale: fa fede solo l'atto pubblicato dall'ente.</li>
+      </ul>
+      <div class="card">
+        <h2 style="margin-top:0">Perché non un elenco da 15–19 €</h2>
+        <table class="compare">
+          <thead>
+            <tr><th>Offerta</th><th>Prezzo osservato</th><th>Differenza in questo brief</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Incentivato, monitoraggio</td><td>15 €/mese IVA inclusa</td><td>Catalogo da interrogare. Qui il filtro è già fatto sul profilo, inclusa l'esclusione.</td></tr>
+            <tr><td>Bandio</td><td>19 €/mese + IVA (23,18 € al consumo)</td><td>Elenco ampio. Qui ogni misura ha stato e scadenza rilette sulla pagina ufficiale.</td></tr>
+            <tr><td>BandiFacile Professional</td><td>20,75 €/mese + IVA se annuale</td><td>Piattaforma. Qui arriva un testo pronto, non un accesso da esplorare.</td></tr>
+            <tr><td>Brief Bandi (ipotesi)</td><td>39 €/mese IVA inclusa, test 29 €</td><td>Da validare con tre persone reali interessate al prezzo. Le simulazioni e questa demo non contano.</td></tr>
+          </tbody>
+        </table>
+        <p class="disclaimer">Prezzi concorrenti letti sulle pagine pubbliche dei listini, non negoziati. Easy Bando (49 € + IVA) include consulenza 1:1 e non è il confronto di questa offerta.</p>
+      </div>
+    </section>
+
+    <section id="iscrizione">
+      <h2>Numero di prova, senza impegno e senza costi</h2>
+      <p>Quando le iscrizioni saranno aperte, basterà lasciare il profilo dell'attività. In questa anteprima il modulo è solo un'illustrazione: non raccoglie dati e non invia nulla.</p>
+      <form class="card" action="#" method="get" onsubmit="return false;" aria-describedby="avviso-iscrizione">
+        <p id="avviso-iscrizione" class="avviso" role="status">Iscrizioni non ancora aperte</p>
+        <fieldset disabled>
+          <legend class="note">Modulo disattivato — anteprima demo</legend>
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" autocomplete="off" placeholder="es. laboratorio@example.test" tabindex="-1">
+          <label for="nome">Nome o ragione sociale (facoltativo)</label>
+          <input id="nome" name="nome" type="text" autocomplete="off" tabindex="-1">
+          <label for="ateco">Codice ATECO *</label>
+          <input id="ateco" name="ateco" type="text" placeholder="es. 16.23" tabindex="-1">
+          <label for="regione">Regione o territorio *</label>
+          <input id="regione" name="regione" type="text" placeholder="es. Lazio" tabindex="-1">
+          <label for="dimensione">Dimensione *</label>
+          <select id="dimensione" name="dimensione" tabindex="-1">
+            <option value="">Seleziona</option>
+            <option value="autonomo">Lavoratore autonomo / professionista</option>
+            <option value="micro">Microimpresa</option>
+            <option value="piccola">Piccola impresa</option>
+          </select>
+          <label for="obiettivo">Cosa vorresti finanziare (facoltativo)</label>
+          <textarea id="obiettivo" name="obiettivo" placeholder="es. macchinari del laboratorio" tabindex="-1"></textarea>
+          <button type="button" disabled>Iscrizioni non ancora aperte</button>
+        </fieldset>
+      </form>
+    </section>
+
+    </section>
+    <section class="page-block" id="brief">
+    
+    <p class="hypo">Esempio fittizio · non è un cliente reale · non è stato inviato</p>
+    <h1>Esempio di brief settimanale</h1>
+    <p class="meta">Data del brief: 12 novembre 2026, fuso Europe/Rome. Ultimo controllo delle misure sul registro di lavoro: 12 novembre 2026, ore 12:33, Europe/Rome.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">Profilo (dichiaratamente fittizio)</h2>
+      <p><strong>Falegnameria Tevere</strong> — profilo di illustrazione, non è un'impresa reale e non è un cliente. Microimpresa artigiana, 5 addetti, sede operativa a Roma (Lazio), iscritta all'albo imprese artigiane, ATECO 16.23. Non dichiara contributo Valore Artigiano 2025, titoli di proprietà industriale, né finanziamento con Confidi.</p>
+      <p class="note">Questo testo è un'anteprima demo. Non è un parere legale o fiscale e non è una sollecitazione a presentare domanda. Fa fede solo l'atto ufficiale dell'ente, da rileggere prima di qualsiasi adempimento.</p>
+    </div>
+
+    <h2>Priorità di questa settimana</h2>
+    <article class="card">
+      <p><span class="tag aperto">Aperto</span> <span class="tag">Pertinente</span></p>
+      <h3>Valore Artigiano 2026 — Regione Lazio / Lazio Innova</h3>
+      <p><strong>Stato:</strong> aperto. <strong>Scadenza:</strong> 16 novembre 2026, ore 17:00. <strong>Ultimo controllo:</strong> 12 novembre 2026, ore 12:33, Europe/Rome.</p>
+      <p><strong>Fonte ufficiale:</strong> <a href="https://www.lazioinnova.it/bandi/valore-artigiano-2026/">https://www.lazioinnova.it/bandi/valore-artigiano-2026/</a></p>
+      <p>Perché è pertinente a questo profilo fittizio: è un'impresa artigiana attiva con sede operativa nel Lazio e non dichiara di avere già ricevuto il contributo 2025, che è causa di esclusione. Contributo a fondo perduto fino al 60% delle spese, massimo 12.000 euro, investimento minimo 5.000 euro, domanda su GeCoWEB Plus con firma digitale.</p>
+    </article>
+
+    <h2>Altra misura da considerare solo a certe condizioni</h2>
+    <article class="card">
+      <p><span class="tag aperto">Aperto</span> <span class="tag cond">Pertinente condizionato</span></p>
+      <h3>Voucher Cloud e Cybersecurity — MIMIT</h3>
+      <p><strong>Stato:</strong> aperto (inferito dalla finestra del decreto: invio dalle 12:00 del 10 novembre 2026 alle 12:00 del 20 gennaio 2027, salvo esaurimento; sulla scheda, al controllo, non c'è un avviso di chiusura anticipata). <strong>Scadenza / finestra:</strong> 20 gennaio 2027, ore 12:00, salvo esaurimento. <strong>Ultimo controllo:</strong> 12 novembre 2026, ore 12:33, Europe/Rome.</p>
+      <p><strong>Fonte ufficiale:</strong> <a href="https://www.mimit.gov.it/it/incentivi/sostegno-alla-domanda-di-servizi-di-cloud-computing-e-cyber-security">https://www.mimit.gov.it/it/incentivi/sostegno-alla-domanda-di-servizi-di-cloud-computing-e-cyber-security</a></p>
+      <p>Pertinente in quanto PMI, ma solo se esiste un piano di spesa di almeno 4.000 euro per prodotti o servizi nuovi o sostanzialmente più avanzati, acquistati da un fornitore dell'elenco ministeriale, e se è disponibile una connettività di almeno 30 Mbps in download. Contributo fino al 50%, massimo 20.000 euro. Non copre il rinnovo di soluzioni già in uso. L'esaurimento delle risorse non è verificabile dalla sola scheda pubblica.</p>
+    </article>
+
+    <h2>Cosa non fare, anche se compare in un elenco</h2>
+    <article class="card">
+      <p><span class="tag aperto">Aperto sullo sportello</span> <span class="tag no">Non pertinente a questo profilo</span></p>
+      <h3>Bando Sviluppo Impresa 2026 — Camera di commercio di Roma</h3>
+      <p><strong>Stato:</strong> aperto, fino a esaurimento e comunque non oltre il 31 dicembre 2026. <strong>Ultimo controllo:</strong> 12 novembre 2026, ore 12:33, Europe/Rome.</p>
+      <p><strong>Fonte ufficiale:</strong> <a href="https://www.rm.camcom.it/archivio43_bandi-altri-bandi_0_278.html">https://www.rm.camcom.it/archivio43_bandi-altri-bandi_0_278.html</a></p>
+      <p>Territorialmente compatibile, ma non pertinente allo stato di questo profilo fittizio: manca il finanziamento garantito o cogarantito da un soggetto attuatore (Confidi) a partire dal 3 novembre 2025, requisito di ammissibilità. La domanda, in ogni caso, la presenta il Confidi, non l'impresa da sola.</p>
+    </article>
+
+    <article class="card">
+      <p><span class="tag no">Chiuso</span> <span class="tag no">Allarme fonti stantie</span></p>
+      <h3>Voucher digitalizzazione PMI 2026 Piemonte</h3>
+      <p><strong>Stato:</strong> chiuso alle 17:00 del 22 ottobre 2026. <strong>Ultimo controllo:</strong> 12 novembre 2026, ore 12:33, Europe/Rome.</p>
+      <p><strong>Fonte ufficiale:</strong> <a href="https://www.to.camcom.it/voucher-digitalizzazione-pmi-2026">https://www.to.camcom.it/voucher-digitalizzazione-pmi-2026</a></p>
+      <p>Alcuni elenchi hanno continuato a mostrare la scadenza originaria del 15 dicembre 2026. Fa fede la comunicazione della Camera di Torino.</p>
+    </article>
+
+    <article class="card">
+      <p><span class="tag no">Chiuso</span> <span class="tag no">Allarme fonti stantie</span></p>
+      <h3>Voucher doppia transizione 2026 Arezzo-Siena</h3>
+      <p><strong>Stato:</strong> chiusura anticipata con atto del 4 agosto 2026. <strong>Ultimo controllo:</strong> 12 novembre 2026, ore 12:33, Europe/Rome.</p>
+      <p><strong>Fonte ufficiale:</strong> <a href="https://albocamerale.camcom.it/as/node/5905">https://albocamerale.camcom.it/as/node/5905</a></p>
+    </article>
+
+    <p class="note">Altre misure del registro, non pertinenti a questo profilo fittizio o in arrivo e comunque escluse in assenza dei requisiti (titoli di proprietà industriale, età e albo, territorio GAL): Giovani Attività Professionali 2026, AF_SRD03, GAL Cilento 01-E, Brevetti+ 2026 (apertura 25 novembre 2026 alle 12:00), Marchi+ 2026 e Disegni+ 2026. Fonti sulle schede ufficiali MIMIT e degli enti, controllo del 12 novembre 2026 alle 12:33, Europe/Rome.</p>
+    <p class="disclaimer">Ipotesi di prezzo da validare: 39 € al mese IVA inclusa. Se non tornasse, si confronta 29 €. Questa anteprima e le simulazioni interne non contano come clienti interessati.</p>
+
+    </section>
+    <section class="page-block" id="privacy">
+    
+    <p class="hypo">Anteprima demo · non è un documento giuridico firmato · titolare ancora da nominare</p>
+    <h1>Informativa sul trattamento dei dati personali</h1>
+    <p class="disclaimer">Questa è un'anteprima demo, non un servizio in produzione. Non sostituisce una consulenza privacy, non è stata validata da un legale e le iscrizioni sono disattivate: in queste pagine non si raccolgono dati. I campi tra parentesi quadre sono segnaposto del titolare, ancora da nominare.</p>
+
+    <h2>1. Titolare</h2>
+    <p>Il titolare del trattamento, quando il servizio sarà online, sarà [soggetto da nominare]. Recapito: [email dedicata del progetto, da aprire solo dopo autorizzazione]. In questa anteprima demo non è indicato alcun dato personale reale.</p>
+
+    <h2>2. Dati previsti (non raccolti in questa demo)</h2>
+    <p>Quando le iscrizioni saranno aperte: email; eventualmente nome o ragione sociale; codice ATECO; regione o territorio; dimensione dell'attività; obiettivo di finanziamento dichiarato; quattro dichiarazioni facoltative e minimizzate (under 40 sì/no, iscrizione a un albo sì/no, zona GAL B/D/fuori, presenza di un finanziamento Confidi sì/no), senza date di nascita, numeri di albo o indirizzi; data di iscrizione e di eventuale disiscrizione; consenso espresso.</p>
+
+    <h2>3. Finalità e base giuridica (previste per il servizio, non attive qui)</h2>
+    <ul class="plain">
+      <li>Invio del numero di prova e, se confermato, del brief settimanale: consenso (art. 6, par. 1, lett. a GDPR).</li>
+      <li>Gestione della disiscrizione e della prova del consenso: obbligo legale e legittimo interesse (art. 6, par. 1, lett. c e f).</li>
+    </ul>
+    <p>Questa anteprima non tratta pagamenti, non profila per pubblicità di terzi e non invia email. Versione del testo: anteprima-demo-2026-11-12.</p>
+
+    <h2>4. Conservazione</h2>
+    <p>In questa demo non viene conservato alcun dato di iscrizione. In produzione si prevede di conservare i dati per la durata dell'iscrizione e, dopo la disiscrizione, solo per il tempo strettamente necessario, comunque non oltre [termine da definire, ipotesi 24 mesi dalla revoca per i log di disiscrizione].</p>
+
+    <h2>5. Destinatari</h2>
+    <p>Oggi nessuno: non c'è invio e non c'è un form attivo. Al lancio potranno essere coinvolti, solo dopo autorizzazione, il servizio di newsletter e l'eventuale host della pagina statica, con incarico dove dovuto.</p>
+
+    <h2>6. Diritti</h2>
+    <p>Quando il servizio sarà attivo, si potrà chiedere accesso, rettifica, cancellazione, limitazione, portabilità e opposizione, e revocare il consenso. Si potrà scrivere al titolare, una volta nominato. Resta il diritto di proporre reclamo al Garante per la protezione dei dati personali.</p>
+
+    </section>
+    <section class="page-block" id="contatti">
+    
+    <p class="hypo">Anteprima demo · nessun dato personale reale · titolare ancora da nominare</p>
+    <h1>Contatti</h1>
+    <p class="disclaimer">Questa pagina è un'anteprima demo. I campi tra parentesi quadre sono segnaposto e non vanno intesi come recapiti reali. Non contiene dati personali reali.</p>
+    <div class="card">
+      <p><strong>Titolare del trattamento e del servizio:</strong> [soggetto da nominare]</p>
+      <p><strong>Email dedicata del progetto:</strong> [email dedicata da aprire solo dopo autorizzazione]</p>
+      <p><strong>Recapito postale:</strong> [indirizzo del titolare, da inserire prima della messa online]</p>
+      <p><strong>Partita IVA o codice fiscale:</strong> [identificativo fiscale del titolare, da inserire se dovuto]</p>
+    </div>
+    <p>Le iscrizioni e la disiscrizione non sono attive in questa anteprima. Per l'informativa sul trattamento dei dati, in versione demo, vai alla pagina privacy.</p>
+    <p class="note">Questo recapito non è un ufficio della pubblica amministrazione e non riceve domande di contributo.</p>
+
+    </section>
+
+    <footer>
+      <p>Brief Bandi — anteprima demo statica. Non è un portale della pubblica amministrazione, non presenta domande e non garantisce l'esito di un contributo. Iscrizioni e invii sono disattivati. Nessun dato personale reale.</p>
+      <p><a href="#contatti">Contatti</a> · <a href="#privacy">Informativa privacy (anteprima demo)</a></p>
+    </footer>
+  </div>
+</body>
+</html>
