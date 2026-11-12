@@ -6,9 +6,21 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Radar Gare IT — pilota Brief Bandi (anteprima)</title>
   <meta name="description" content="Radar Gare IT: ogni settimana le gare pubbliche che vale la pena leggere per i piccoli fornitori IT italiani, con i requisiti che escludono e le rettifiche. Anteprima pilota, nessun acquisto o iscrizione attiva.">
-  <link rel="icon" href="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%231D4E3C%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22230%22%20width%3D%22200%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22%23FAF7F2%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22278%22%20width%3D%22150%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22%23A7F3D0%22/%3E%3Crect%20x%3D%22156%22%20y%3D%22326%22%20width%3D%22176%22%20height%3D%2218%22%20rx%3D%229%22%20fill%3D%22%235F8F7A%22/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml;charset=utf-8,%3Csvg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Crect width="64" height="64" rx="15" fill="%231D4E3C"/%3E%3Cg fill="none" stroke-linecap="round"%3E%3Cpath d="M17 35a12 12 0 0 1 12 12" stroke="%23FAF7F2" stroke-width="4.5"/%3E%3Cpath d="M17 25a22 22 0 0 1 22 22" stroke="%23FAF7F2" stroke-opacity=".75" stroke-width="4.5"/%3E%3Cpath d="M17 15a32 32 0 0 1 32 32" stroke="%23FAF7F2" stroke-opacity=".45" stroke-width="4.5"/%3E%3Cpath d="M17 47L40 24" stroke="%236EE7B7" stroke-width="3"/%3E%3C/g%3E%3Ccircle cx="17" cy="47" r="4.5" fill="%23FAF7F2"/%3E%3Ccircle cx="41.5" cy="22.5" r="5.5" fill="%236EE7B7"/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#1D4E3C">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:title" content="Radar Gare IT — le gare pubbliche IT che vale la pena leggere">
+  <meta property="og:description" content="Shortlist settimanale per piccoli fornitori IT: requisiti che escludono, rettifiche, fonte ufficiale. Pilota in anteprima.">
+  <meta property="og:url" content="https://briefbandi.github.io/radar-gare-it/">
+  <meta property="og:image" content="https://briefbandi.github.io/radar-gare-it/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Radar Gare IT: le gare pubbliche IT che vale la pena leggere">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
-    /* Font: Inter / Instrument Sans se installati o self-hosted nel repo (niente CDN Google Fonts per evitare trasferimenti di IP a terzi). */
+    /* Inter variabile (SIL OFL 1.1) self-hosted nel repo: nessuna CDN esterna. */
+    @font-face{font-family:"Inter";src:url("assets/inter-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
     :root{
       --ink:#14171A; --muted:#56606B; --soft:#8A939C;
       --bg:#F7F6F2; --card:#FFFFFF; --line:#E4E1DA;
@@ -20,7 +32,10 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-    body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px}
+    body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px;font-feature-settings:"cv11","ss01";-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    h1,h2,h3{text-wrap:balance}
+    .lead,.sub{text-wrap:pretty}
+    .facts dd,.amount{font-variant-numeric:tabular-nums}
     a{color:var(--accent-2)}
     :focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;border-radius:6px}
     .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:10}
@@ -32,14 +47,16 @@
     header.site{border-bottom:1px solid var(--line);background:rgba(247,246,242,.92);backdrop-filter:saturate(1.2) blur(6px);position:sticky;top:0;z-index:5}
     header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px;flex-wrap:wrap}
     .brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
-    .brand svg{width:32px;height:32px;flex:none}
-    .brand b{color:var(--accent)}
+    .brand svg{width:36px;height:36px;flex:none;border-radius:9px}
+    .brand .name{display:flex;flex-direction:column;line-height:1.1}
+    .brand .name b{color:var(--accent-2)}
+    .brand small{font-size:.72rem;font-weight:500;color:var(--soft);letter-spacing:0}
     nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.25rem;flex-wrap:wrap}
     nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .8rem;border-radius:999px;color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500}
     nav a:hover{color:var(--ink);background:#EDEBE5}
 
     /* HERO */
-    .hero{padding:3.5rem 0 3rem}
+    .hero{padding:3.5rem 0 3rem;position:relative;isolation:isolate}
     .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
     .eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid #CFE3D7;border-radius:999px;padding:.3rem .75rem}
     .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-2)}
@@ -52,7 +69,8 @@
     .trust li::before{content:"✓";color:var(--accent-2);font-weight:700;margin-right:.4rem}
 
     /* CARD GARA */
-    .tender{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.4rem 1.4rem 1.2rem}
+    .tender{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.4rem 1.4rem 1.2rem;position:relative}
+    .hero .tender{border-top:4px solid var(--accent-2)}
     .tender .top{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-bottom:.8rem}
     .pill{font-size:.72rem;font-weight:650;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:.22rem .6rem;border:1px solid}
     .pill.real{color:var(--accent);background:var(--accent-soft);border-color:#CFE3D7}
@@ -109,16 +127,24 @@
     @media (max-width:960px){
       .hero .wrap,.price{grid-template-columns:1fr;gap:2rem}
       .steps,.grid3{grid-template-columns:1fr}
+      .steps{gap:.75rem}
+      .steps li{display:grid;grid-template-columns:auto 1fr;column-gap:.85rem;align-items:start;padding:1rem 1.1rem}
+      .steps li::before{grid-row:span 2;margin:0}
+      .steps h3{margin-top:.2rem}
       .hero{padding:2.25rem 0 2rem}
       section{padding:2.5rem 0}
     }
+    @media (max-width:359px){
+      .facts{grid-template-columns:1fr}
+    }
     @media (max-width:420px){
+      .banner .long{display:none}
+      .banner{font-size:.8rem}
       .wrap{padding:0 1rem}
       header.site{position:static}
       header.site .wrap{padding-top:.4rem;padding-bottom:.2rem}
       nav ul{width:100%;justify-content:space-between}
       nav a{padding:0 .55rem;font-size:.9rem}
-      .facts{grid-template-columns:1fr}
       .tender{padding:1.1rem}
       .lead{font-size:1.05rem}
       .cta{width:100%;justify-content:center}
@@ -127,13 +153,13 @@
 </head>
 <body>
   <a class="skip" href="#contenuto">Vai al contenuto</a>
-  <div class="banner" role="note">Anteprima pilota · copertura in validazione · nessun acquisto o iscrizione attiva</div>
+  <div class="banner" role="note">Anteprima pilota<span class="long"> · copertura in validazione</span> · nessun<span class="long"> acquisto o</span> iscrizione attiva</div>
 
   <header class="site">
     <div class="wrap">
-      <a class="brand" href="../" aria-label="Brief Bandi, torna alla demo principale">
-        <svg viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="110" fill="#1D4E3C"/><rect x="140" y="170" width="232" height="30" rx="15" fill="#FAF7F2"/><rect x="140" y="241" width="170" height="30" rx="15" fill="#A7F3D0"/><rect x="140" y="312" width="200" height="30" rx="15" fill="#5F8F7A"/></svg>
-        <span>Brief<b>Bandi</b> · Radar Gare IT</span>
+      <a class="brand" href="../" aria-label="Radar Gare IT di Brief Bandi, torna alla demo principale">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#1D4E3C"/><g fill="none" stroke-linecap="round"><path d="M17 35a12 12 0 0 1 12 12" stroke="#FAF7F2" stroke-width="4.5"/><path d="M17 25a22 22 0 0 1 22 22" stroke="#FAF7F2" stroke-opacity=".75" stroke-width="4.5"/><path d="M17 15a32 32 0 0 1 32 32" stroke="#FAF7F2" stroke-opacity=".45" stroke-width="4.5"/><path d="M17 47L40 24" stroke="#6EE7B7" stroke-width="3"/></g><circle cx="17" cy="47" r="4.5" fill="#FAF7F2"/><circle cx="41.5" cy="22.5" r="5.5" fill="#6EE7B7"/></svg>
+        <span class="name"><span>Radar Gare <b>IT</b></span><small>di Brief Bandi</small></span>
       </a>
       <nav aria-label="Sezioni della pagina">
         <ul>
@@ -151,7 +177,7 @@
       <div class="wrap">
         <div>
           <span class="eyebrow">Pilota per fornitori IT</span>
-          <h1>Le gare pubbliche IT che <em>vale la pena leggere</em>. E quelle da scartare subito.</h1>
+          <h1>Le gare pubbliche&nbsp;IT che <em>vale la pena leggere</em>. E quelle da scartare subito.</h1>
           <p class="lead">Ogni settimana una shortlist per piccoli fornitori di assistenza sistemistica, reti, sicurezza e cloud: requisiti che escludono, scadenze, rettifiche e link all'atto ufficiale.</p>
           <a class="cta" href="#esempio">Guarda il brief di esempio <span aria-hidden="true">→</span></a>
           <ul class="trust">
